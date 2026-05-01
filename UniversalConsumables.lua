@@ -115,7 +115,7 @@ local function swap_to_joker(t, joker_key)
 end
 
 local function make_enhance1(key, center_key, msg_key, colour_key)
-    SMODS.Consumable:take_ownership(key, {
+    SMODS.Consumable:take_ownership(key, { prefix_config = false,
         can_use = function(self, card) return UC.has_any(card) end,
         use = function(self, card, area, copier)
             local s = UC.sel()
@@ -142,7 +142,7 @@ local function make_enhance1(key, center_key, msg_key, colour_key)
 end
 
 local function make_enhance2(key, center_key, msg_key, colour_key)
-    SMODS.Consumable:take_ownership(key, {
+    SMODS.Consumable:take_ownership(key, { prefix_config = false,
         can_use = function(self, card) return UC.has_any(card) end,
         use = function(self, card, area, copier)
             local s = UC.sel()
@@ -171,7 +171,7 @@ local function make_enhance2(key, center_key, msg_key, colour_key)
 end
 
 local function make_suit(key, suit)
-    SMODS.Consumable:take_ownership(key, {
+    SMODS.Consumable:take_ownership(key, { prefix_config = false,
         can_use = function(self, card) return UC.has_any(card) end,
         use = function(self, card, area, copier)
             local s = UC.sel()
@@ -208,7 +208,7 @@ local function make_suit(key, suit)
 end
 
 local function make_seal(key, seal, msg_key, colour_key)
-    SMODS.Consumable:take_ownership(key, {
+    SMODS.Consumable:take_ownership(key, { prefix_config = false,
         can_use = function(self, card) return UC.has_any(card) end,
         use = function(self, card, area, copier)
             local s = UC.sel()
@@ -247,7 +247,7 @@ make_seal("deja_vu",  "Red",    "k_red_seal",    "RED")
 make_seal("trance",   "Blue",   "k_blue_seal",   "BLUE")
 make_seal("medium",   "Purple", "k_purple_seal", "PURPLE")
 
-SMODS.Consumable:take_ownership("strength", {
+SMODS.Consumable:take_ownership("strength", { prefix_config = false,
     can_use = function(self, card) return UC.has_any(card) end,
     use = function(self, card, area, copier)
         local s = UC.sel()
@@ -309,7 +309,7 @@ SMODS.Consumable:take_ownership("strength", {
     end,
 }, true)
 
-SMODS.Consumable:take_ownership("hanged_man", {
+SMODS.Consumable:take_ownership("hanged_man", { prefix_config = false,
     can_use = function(self, card) return UC.has_any(card) end,
     use = function(self, card, area, copier)
         local s = UC.sel()
@@ -334,7 +334,7 @@ SMODS.Consumable:take_ownership("hanged_man", {
     end,
 }, true)
 
-SMODS.Consumable:take_ownership("death", {
+SMODS.Consumable:take_ownership("death", { prefix_config = false,
     can_use = function(self, card)
 
         if G.jokers and #G.jokers.cards >= 2 then return true end
@@ -392,7 +392,7 @@ SMODS.Consumable:take_ownership("death", {
     end,
 }, true)
 
-SMODS.Consumable:take_ownership("wheel_of_fortune", {
+SMODS.Consumable:take_ownership("wheel_of_fortune", { prefix_config = false,
     can_use = function(self, card)
         if G.jokers then
             for _,c in ipairs(G.jokers.cards) do
@@ -440,7 +440,7 @@ SMODS.Consumable:take_ownership("wheel_of_fortune", {
     end,
 }, true)
 
-SMODS.Consumable:take_ownership("aura", {
+SMODS.Consumable:take_ownership("aura", { prefix_config = false,
     can_use = function(self, card) return UC.has_any(card) end,
     use = function(self, card, area, copier)
         local s = UC.sel()
@@ -458,7 +458,7 @@ SMODS.Consumable:take_ownership("aura", {
     end,
 }, true)
 
-SMODS.Consumable:take_ownership("cryptid", {
+SMODS.Consumable:take_ownership("cryptid", { prefix_config = false,
     can_use = function(self, card)
 
         if G.hand and #G.hand.cards > 0 then return true end
@@ -504,7 +504,7 @@ SMODS.Consumable:take_ownership("cryptid", {
     end,
 }, true)
 
-SMODS.Consumable:take_ownership("immolate", {
+SMODS.Consumable:take_ownership("immolate", { prefix_config = false,
     can_use = function(self, card)
         if UC.force_hand then
             return G.hand and #G.hand.cards > 1
@@ -545,7 +545,7 @@ SMODS.Consumable:take_ownership("immolate", {
     end,
 }, true)
 
-SMODS.Consumable:take_ownership("hex", {
+SMODS.Consumable:take_ownership("hex", { prefix_config = false,
     can_use = function(self, card)
         if UC.force_hand then
             return G.hand and #G.hand.cards > 1
@@ -610,7 +610,7 @@ SMODS.Consumable:take_ownership("hex", {
     end,
 }, true)
 
-SMODS.Consumable:take_ownership("ankh", {
+SMODS.Consumable:take_ownership("ankh", { prefix_config = false,
     can_use = function(self, card)
         return G.jokers and #G.jokers.cards >= 1
     end,
@@ -656,7 +656,7 @@ SMODS.Consumable:take_ownership("ankh", {
     end,
 }, true)
 
-SMODS.Consumable:take_ownership("ectoplasm", {
+SMODS.Consumable:take_ownership("ectoplasm", { prefix_config = false,
     can_use = function(self, card)
         if UC.force_hand then
             return G.hand and #G.hand.cards > 0
@@ -705,7 +705,7 @@ SMODS.Consumable:take_ownership("ectoplasm", {
     end,
 }, true)
 
-SMODS.Consumable:take_ownership("sigil", {
+SMODS.Consumable:take_ownership("sigil", { prefix_config = false,
     can_use = function(self, card)
         if G.hand and #G.hand.cards > 1 then return true end
         if not UC.force_hand and G.jokers and #G.jokers.cards > 0 then return true end
@@ -740,7 +740,7 @@ SMODS.Consumable:take_ownership("sigil", {
     end,
 }, true)
 
-SMODS.Consumable:take_ownership("ouija", {
+SMODS.Consumable:take_ownership("ouija", { prefix_config = false,
     can_use = function(self, card)
         if G.hand and #G.hand.cards > 1 then return true end
         if not UC.force_hand and G.jokers and #G.jokers.cards > 0 then return true end
@@ -781,7 +781,7 @@ SMODS.Consumable:take_ownership("ouija", {
 }, true)
 
 local function make_destroy_add(key, count, rank_pool, add_count)
-    SMODS.Consumable:take_ownership(key, {
+    SMODS.Consumable:take_ownership(key, { prefix_config = false,
         can_use = function(self, card)
             if G.hand and #G.hand.cards > 1 then return true end
             if not UC.force_hand and G.jokers and #G.jokers.cards > 0 then return true end
@@ -820,20 +820,25 @@ local function make_destroy_add(key, count, rank_pool, add_count)
                             v:start_dissolve(nil, true)
                         end
                     end
-                    local suits = {"Spades","Hearts","Clubs","Diamonds"}
+                    local suit_keys = {"S","H","C","D"}
+                    local rank_map = {["2"]="2",["3"]="3",["4"]="4",["5"]="5",["6"]="6",["7"]="7",["8"]="8",["9"]="9",["10"]="10",["Jack"]="J",["Queen"]="Q",["King"]="K",["Ace"]="A"}
                     local enhs = {"m_bonus","m_mult","m_wild","m_glass","m_steel","m_stone","m_gold","m_lucky"}
                     for i=1,add_count do
                         local r = rank_pool[math.random(#rank_pool)]
-                        local s = suits[math.random(#suits)]
+                        local s = suit_keys[math.random(#suit_keys)]
                         local e = enhs[math.random(#enhs)]
-                        local nc = Card(
-                            G.deck.T.x + G.deck.T.w/2, G.deck.T.y,
-                            G.CARD_W, G.CARD_H,
-                            G.P_CARDS[s.."_"..r], G.P_CENTERS[e]
-                        )
-                        nc:add_to_deck()
-                        G.deck:emplace(nc)
-                        card_eval_status_text(nc,"extra",nil,nil,nil,{message=localize("k_added_ex"),colour=G.C.GREEN})
+                        local rk = rank_map[r] or r
+                        local front = G.P_CARDS[s.."_"..rk]
+                        if front then
+                            local nc = Card(
+                                G.deck.T.x + G.deck.T.w/2, G.deck.T.y,
+                                G.CARD_W, G.CARD_H,
+                                front, G.P_CENTERS[e]
+                            )
+                            nc:add_to_deck()
+                            G.deck:emplace(nc)
+                            card_eval_status_text(nc,"extra",nil,nil,nil,{message=localize("k_added_ex"),colour=G.C.GREEN})
+                        end
                     end
                     return true
                 end
@@ -949,7 +954,7 @@ G.FUNCS.can_use_consumeable = function(e)
     end
 end
 
-SMODS.Consumable:take_ownership("wraith", {
+SMODS.Consumable:take_ownership("wraith", { prefix_config = false,
     can_use = function(self, card)
         if UC.force_hand then
             return G.hand and #G.hand.cards >= 0
