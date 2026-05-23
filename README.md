@@ -37,9 +37,7 @@ Drop the `UniversalConsumables` folder into `%AppData%/Balatro/Mods/`
 * Aura: Applies an edition to any selected card
 * Ankh: copies a random joker and destroys the rest
 
-## Hand Mode (Tab)
-
-Some spectrals randomly target things by default - **Immolate, Hex, Ectoplasm, Wraith**. By default they now target jokers. Press **Tab** while one of these is in your consumables to switch to Hand Mode, which makes them target hand cards instead (their original behavior). The USE button turns **blue** in hand mode and **red** in joker mode.
+NOTE THAT CARDS LIKE IMMOLATE WILL TARGET YOUR JOKERS IF YOU HAVE ONE SELECTED
 
 - **Immolate**: joker mode destroys 5 random jokers + $20, hand mode destroys 5 random hand cards + $20
 - **Hex**: joker mode polychromes a random joker and destroys the rest, hand mode does the same to hand cards
