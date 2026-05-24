@@ -17,8 +17,8 @@ Drop the `UniversalConsumables` folder into `%AppData%/Balatro/Mods/`
 * Justice: Convert to Glass Joker
 * Strength: Convert to a random Joker one rarity higher
 * The Hanged Man: Kills the Joker
-* Death: Converts the Joker to the left into the selected Joker
-* The Devil: Convert to Golden Joker
+* Death: Converts the Joker to the right of the selected joker into the selected Joker
+* The Devil: Convert to Golden Ticket
 * The Tower: Convert to Stone Joker
 * The Star: Convert to Greedy Joker if common, otherwise convert to Rough gem
 * The Moon: Convert to Gluttonous Joker if common, otherwise convert to Onyx Agate
@@ -46,4 +46,3 @@ NOTE THAT CARDS LIKE IMMOLATE WILL TARGET YOUR JOKERS IF YOU HAVE ONE SELECTED
 
 ## Notes
 - Eternal jokers are still protected from destruction effects
-- Hand mode resets after each use
