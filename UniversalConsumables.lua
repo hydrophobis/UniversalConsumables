@@ -306,17 +306,12 @@ SMODS.Consumable:take_ownership("strength", {
             local cc = t.config and t.config.card
             if cc and cc.suit and cc.value and SMODS.Suits[cc.suit] and SMODS.Ranks[cc.value] then
               local suit_key = SMODS.Suits[cc.suit].card_key
-              local all_ranks = {}
-              for _, rk in ipairs(SMODS.Rank.obj_buffer) do
-                local r = SMODS.Ranks[rk]
-                if r.sort_rank then
-                  all_ranks[#all_ranks+1] = {key = rk, sort = r.sort_rank, card_key = r.card_key}
-                end
-              end
-              table.sort(all_ranks, function(a,b) return a.sort < b.sort end)
-              for i,r in ipairs(all_ranks) do
-                if r.key == cc.value and i < #all_ranks then
-                  t:set_base(G.P_CARDS[suit_key.."_"..all_ranks[i+1].card_key])
+              for i, rk in ipairs(SMODS.Rank.obj_buffer) do
+                if rk == cc.value and i < #SMODS.Rank.obj_buffer then
+                  local next_rank = SMODS.Ranks[SMODS.Rank.obj_buffer[i+1]]
+                  if next_rank then
+                    t:set_base(G.P_CARDS[suit_key.."_"..next_rank.card_key])
+                  end
                   break
                 end
               end
